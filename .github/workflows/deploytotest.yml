@@ -20,7 +20,8 @@ jobs:
       id: sncicd-publish-app
       uses: ServiceNow/sncicd-publish-app@2.0.1
       with:
-        versionFormat: autodetect
+        versionTemplate: "x.y.z"
+        versionFormat: template
       env:
         nowUsername: ${{ secrets.NOW_TEST_USERNAME }}
         nowPassword: ${{ secrets.NOW_TEST_PASSWORD }}
