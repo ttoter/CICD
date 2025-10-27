@@ -24,7 +24,7 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Apply Changes to TEST Instance
-        uses: ServiceNow/sncicd-apply-changes@1.0
+        uses: ServiceNow/sncicd-apply-changes@2.0.0
         env:
           nowUsername: ${{ secrets.NOW_TEST_USERNAME }}
           nowPassword: ${{ secrets.NOW_TEST_PASSWORD }}
