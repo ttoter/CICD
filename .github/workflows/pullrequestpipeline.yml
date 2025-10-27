@@ -19,15 +19,12 @@ jobs:
 
       - name: Display Branch Name
         run: echo "The current branch is:${{ steps.extract_branch.outputs.branch }}"
-
-      #- name: Display Secrets
-      #  run: echo "APP_SYS_ID:${{ secrets.APP_SYS_ID }}\nTEST_SUITE_ID:${{ secrets.ATF_TEST_SUITE_ID }}\nNOW_TEST_USERNAME:${{ secrets.NOW_TEST_USERNAME }}\nNOW_TEST_PASSWORD:${{ secrets.NOW_TEST_PASSWORD }}\nNOW_TEST_INSTANCE:${{ secrets.NOW_TEST_INSTANCE }}\nNOW_PROD_USERNAME:${{ secrets.NOW_PROD_USERNAME }}\nNOW_PROD_PASSWORD:${{ secrets.NOW_PROD_PASSWORD }}\nNOW_PROD_INSTANCE:${{ secrets.NOW_PROD_INSTANCE }}"
-
+        
       - name: Checkout Code
         uses: actions/checkout@v2
 
       - name: Apply Changes to TEST Instance
-        uses: ServiceNow/sncicd-apply-changes@2.0.0
+        uses: ServiceNow/sncicd-apply-changes@1.0
         env:
           nowUsername: ${{ secrets.NOW_TEST_USERNAME }}
           nowPassword: ${{ secrets.NOW_TEST_PASSWORD }}
@@ -39,12 +36,7 @@ jobs:
         id: atf_test_dev
         uses: ServiceNow/sncicd-tests-run@2.0.0
         with:
-          browserName:
-          browserVersion:
-          osName:
-          osVersion:
           testSuiteSysId: ${{ secrets.ATF_TEST_SUITE_ID }}
-          testSuiteName:
         env:
           nowUsername: ${{ secrets.NOW_TEST_USERNAME }}
           nowPassword: ${{ secrets.NOW_TEST_PASSWORD }}
