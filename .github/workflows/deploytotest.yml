@@ -1,8 +1,10 @@
 name: Close Pull Request / Deploy to Prod instance
 
-# Only trigger on pull request closed events
+# Only trigger on pull request closed events on the main branch
 on:
   pull_request:
+    branches:
+      - main
     types: [closed]
 
 jobs:
@@ -18,8 +20,7 @@ jobs:
       id: sncicd-publish-app
       uses: ServiceNow/sncicd-publish-app@2.0.1
       with:
-        versionTemplate: "x.y.z"
-        versionFormat: template
+        versionFormat: autodetect
       env:
         nowUsername: ${{ secrets.NOW_TEST_USERNAME }}
         nowPassword: ${{ secrets.NOW_TEST_PASSWORD }}
