@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_include">
+    <sys_script_include action="INSERT_OR_UPDATE">
+        <access>package_private</access>
+        <active>true</active>
+        <api_name>x_cdltd_cicd_demoa.MyTest6</api_name>
+        <caller_access/>
+        <client_callable>false</client_callable>
+        <description/>
+        <mobile_callable>false</mobile_callable>
+        <name>MyTest6</name>
+        <sandbox_callable>false</sandbox_callable>
+        <script><![CDATA[var MyTest6 = Class.create();
+MyTest6.prototype = {
+    initialize: function() {
+    },
+
+    type: 'MyTest6'
+};]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-10-27 20:31:32</sys_created_on>
+        <sys_id>2eaf54a2c3b472100ec67d0ed4013184</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>MyTest6</sys_name>
+        <sys_package display_value="CICD DemoApp" source="x_cdltd_cicd_demoa">414e564e83f032107f44c2654cda1ecf</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="CICD DemoApp">414e564e83f032107f44c2654cda1ecf</sys_scope>
+        <sys_update_name>sys_script_include_2eaf54a2c3b472100ec67d0ed4013184</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-10-27 20:31:32</sys_updated_on>
+    </sys_script_include>
+</record_update>
