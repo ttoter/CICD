@@ -13,7 +13,7 @@ jobs:
 
       - name: "Publish"
         id: publish_app
-        uses: ServiceNow/sncicd-publish-app@2.0.0
+        uses: ./
         with:
           versionFormat: detect
         env:
