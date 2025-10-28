@@ -16,6 +16,7 @@ jobs:
         uses: ./
         with:
           versionFormat: detect
+          incrementBy: 1
         env:
           nowUsername: GitHub.pipeline
           nowPassword: SecretP4ssW@rd
