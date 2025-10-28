@@ -24,3 +24,5 @@ jobs:
 
       - name: "Display App Version Published"
         run: echo "version[${{ steps.publish_app.outputs.newVersion }}]"
+    outputs:
+      publishversion: ${{ steps.publish_app.outputs.newVersion }}
