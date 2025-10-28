@@ -1,0 +1,26 @@
+name: Pub ServiceNow App
+
+on:
+  workflow_dispatch:
+
+jobs:
+  pub-app:
+    name: "Publish App"
+    runs-on: ubuntu-latest
+    steps:
+      - name: "Checkout Repo"
+        uses: actions/checkout@v2
+
+      - name: "Publish"
+        id: publish_app
+        uses: ServiceNow/sncicd-publish-app@2.0.0
+        with:
+          versionFormat: detect
+        env:
+          nowUsername: GitHub.pipeline
+          nowPassword: SecretP4ssW@rd
+          nowSourceInstance: nowlearning-nlinst03413006-9ahnn-test-0001.lab
+          appSysID: 414e564e83f032107f44c2654cda1ecf
+
+      - name: "Display App Version Published"
+        run: echo "version[${{ steps.publish_app.outputs.newVersion }}]"
